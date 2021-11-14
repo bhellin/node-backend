@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors");
 
 class Server {
   constructor() {
@@ -11,7 +12,9 @@ class Server {
   }
 
   middlewares() {
-    this.app.use( express.static('public'))
+    this.app.use( cors() );
+    this.app.use( express.static('public'));
+
   }
 
   routes() {
